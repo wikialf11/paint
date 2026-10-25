@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>PAINT! · Lienzo infinito compartido</title>
+  <meta name="description" content="Un lienzo casi infinito donde todo el mundo pinta a la vez. La pintura negra es limitada y compartida: borra para recuperarla." />
+  <meta property="og:title" content="PAINT! · Lienzo infinito compartido" />
+  <meta property="og:description" content="Pinta en tiempo real con todo el mundo. La pintura negra es limitada." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'><rect width='4' height='4' fill='white'/><rect width='2' height='2' fill='black'/><rect x='2' y='2' width='2' height='2' fill='black'/></svg>" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!--
+    GOOGLE ADSENSE
+    Cuando AdSense apruebe tu sitio, descomenta esta línea y cambia
+    ca-pub-XXXXXXXXXXXXXXXX por tu ID de editor. Cambia también los
+    data-ad-slot de los bloques de abajo y pon tu ID en ads.txt.
+  -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+  <header id="topbar">
+    <div class="brand">PAINT<span>!</span></div>
+    <div id="paint" title="Pintura negra que queda para todos los jugadores">
+      <div class="bar"><div id="paint-fill"></div></div>
+      <div id="paint-text">…</div>
+    </div>
+    <div id="online" title="Jugadores conectados ahora">● <span id="online-n">1</span></div>
+  </header>
+
+  <!-- Anuncio superior (banner horizontal) -->
+  <aside class="ad ad-top" aria-label="Publicidad">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1111111111"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <span class="ad-ph">Publicidad</span>
+  </aside>
+
+  <main id="stage">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud">
+      <div id="coords">0, 0</div>
+      <div class="buttons">
+        <button id="btn-zoom-in" title="Acercar">＋</button>
+        <button id="btn-zoom-out" title="Alejar">－</button>
+        <button id="btn-home" title="Volver al centro">⌂</button>
+        <button id="btn-random" title="Ir a un dibujo al azar">🎲</button>
+        <button id="btn-share" title="Copiar enlace a este sitio">🔗</button>
+      </div>
+    </div>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="help">
+      <b>Clic</b> en un cuadro para pintarlo de negro, otra vez para volverlo blanco.<br />
+      <b>Arrastra</b> para moverte, <b>rueda</b> o <b>pellizco</b> para hacer zoom.<br />
+      La pintura negra es <b>la misma para todos</b>: si se acaba, alguien tiene que borrar.
+      <button id="help-close">Entendido</button>
+    </div>
+  </main>
+
+  <!-- Anuncio lateral (solo en pantallas anchas) -->
+  <aside class="ad ad-side" aria-label="Publicidad">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="2222222222"
+         data-ad-format="vertical"
+         data-full-width-responsive="false"></ins>
+    <span class="ad-ph">Publicidad</span>
+  </aside>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
